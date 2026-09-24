@@ -20,7 +20,7 @@ function setup() {
 function draw(){
   background(43, 32, 66);
 //UFO base 
-fill("pink");
+fill("white");
 circle(900 + x, 400, 300);
 fill(43, 128, 255);
 // Earth and The Moon
