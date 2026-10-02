@@ -3,6 +3,7 @@
 //I think space is interesting and 
 //hopefully learn more about how 
 // I can make the background look more like space.
+//User can use left and right arrow keys to move the UFO
 let x=0;
 function keyPressed(){
   if(keyCode === RIGHT_ARROW){
@@ -36,7 +37,7 @@ circle(0, 0, 50);
 //Mars
 fill(135, 33, 15)
 circle(1920,1000, 100);
-//Crown and Queen UFO
+//Crown and UFO
 fill(245, 187, 0);
 triangle(1000 + x, 290, 1000 + x, 150, 900 + x, 290);
 triangle(900 + x, 290, 900 + x, 150, 1000 + x, 290);
