@@ -1,36 +1,63 @@
-/*
-Name: Gisselee R
-Title: The Moon and The Mountains
-I love going to Mexico for vacation and everytime I go, 
-I capture the beautiful scenery of the mountains.
-*/
+//Name: Gisselee R
+//Title: UFO in Space
+//I think space is interesting and 
+//hopefully learn more about how 
+// I can make the background look more like space.
+//User can use left and right arrow keys to move the UFO
+let x=0;
+function keyPressed(){
+  if(keyCode === RIGHT_ARROW){
+    x+=50;
+  }
+    if(keyCode === LEFT_ARROW){
+    x-=50;
+  }
 
+}
 function setup() {
-  createCanvas(1920, 1080);
+  createCanvas(1920, 1090);
 }
 
-function draw() {
-  background(65, 105, 150);
+function draw(){
+  background(43, 32, 66);
+//UFO base 
+fill(163, 225, 230);
+circle(900 + x, 400, 300);
+fill(43, 128, 255);
+// Earth and The Moon
+noStroke();
+circle(200, 200, 100);
+fill("white");
+noStroke();
+circle(250, 150, 20);
+//The Sun
+noStroke();
+fill("yellow")
+circle(0, 0, 50);
+//Mars
+fill(135, 33, 15)
+circle(1920,1000, 100);
+//Crown and UFO
+fill(245, 187, 0);
+triangle(1000 + x, 290, 1000 + x, 150, 900 + x, 290);
+triangle(900 + x, 290, 900 + x, 150, 1000 + x, 290);
 
-  stroke(240, 228, 211);
-    fill(240, 228, 211);
-ellipse (960,200,150);
+fill("blue");
+circle(950 + x, 250, 30);
+fill("red");
+circle(910 + x, 250, 30);
+fill("green");
+circle(990 + x, 250, 30);
+fill("black");
+circle(850 + x, 350 , 30);
+fill("black");
+circle(950 + x, 350 , 30);
 
-stroke(252, 243, 230);
-fill(252, 243, 230);
-ellipse (960, 200, 120);
+fill(24, 72, 140);
+ellipse(900 + x, 480, 500, 40);
 
-stroke(16, 44, 64);
-fill(16, 44, 64);
-triangle(600, 1080, 1300, 350 ,1920 ,1080);
-
-stroke(7, 24, 38);
-fill(7, 24, 38);
-rect(1100, 930, 150, 150);
-
-stroke(32, 60, 79);
-fill(32, 60, 79);
-triangle(0, 1080, 500, 550, 1920, 1920);
-
-
+noFill();
+stroke(0);
+strokeWeight(3);
+arc(900 + x, 390, 90, 10, 0, PI);
 }
