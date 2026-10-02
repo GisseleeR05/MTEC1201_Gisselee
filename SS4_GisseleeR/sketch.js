@@ -3,7 +3,8 @@ Title: UFO in Space (Creating Uncertainty)
 I'm using the same theme, Space and UFO. 
 Random planets will appear that are in the solar system.
 Instructions: Press left and right arrow keys to move UFO
-and press the mouse to make random stars
+and click the screen using the mouse 
+to make random planets move.
 */
 
 function setup() {
