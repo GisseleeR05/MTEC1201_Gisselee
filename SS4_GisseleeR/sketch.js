@@ -1,4 +1,9 @@
-
+/*Name: Gisselee R
+Title: UFO in Space (Conditionals)
+I'm using the same theme, Space and UFO. 
+Instructions: Press left and right arrow keys to move UFO
+which should increase or decrease in size.
+*/
 function setup() {
   createCanvas(1920, 1080);
 }
