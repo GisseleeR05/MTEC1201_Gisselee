@@ -1,3 +1,4 @@
+
 function setup() {
   createCanvas(1920, 1080);
 }
@@ -11,8 +12,7 @@ function draw() {
 //Variables
 let x = 0;
 let ufoSize = 1;
-let ufoX = 960;
-let ufoY = 500;
+
 
 //Drawing the Earth
 function drawEarth() {
