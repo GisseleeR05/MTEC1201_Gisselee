@@ -107,7 +107,6 @@ ufoSize += 0.1;
 } else if (keyCode === RIGHT_ARROW && x < 450 && ufoSize > 0.2) {
 x += 50;
 ufoSize -= 0.1;
-} else {
-}
+} 
 }
 
