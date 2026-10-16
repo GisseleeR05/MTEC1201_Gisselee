@@ -49,7 +49,10 @@ if (youDied === false) {
 //Draw Asteroid
 image(asteroidImage, asteroidX, asteroidY, 100, 100);
 //Crash between UFO & Asteroid
-if (abs(ufoX - asteroidX) < 100 && abs(ufoY - asteroidY) < 80) {
+if (ufoX > asteroidX - 100 && 
+  ufoX < asteroidX + 100 && 
+  ufoY > asteroidY - 80 && 
+  ufoY < asteroid + 80){
   youDied = true;
 }
 //Reset
