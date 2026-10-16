@@ -68,9 +68,9 @@ fill(255);
 textAlign(LEFT, TOP);
 textSize(35);
 text("survival time: " + floor(time) + "seconds", 30, 30);
-} else {
-
+} 
 //You Died screen
+else {
 fill(255, 100, 100);
 textAlign(CENTER, CENTER);
 textSize(80);
