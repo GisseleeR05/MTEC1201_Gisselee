@@ -52,7 +52,7 @@ image(asteroidImage, asteroidX, asteroidY, 100, 100);
 if (ufoX > asteroidX - 100 && 
   ufoX < asteroidX + 100 && 
   ufoY > asteroidY - 80 && 
-  ufoY < asteroid + 80){
+  ufoY < asteroidY + 80){
   youDied = true;
 }
 //Reset
