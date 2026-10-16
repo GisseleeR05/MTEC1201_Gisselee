@@ -28,11 +28,11 @@ function mousePressed() {
 function drawScene0() {
 fill(202, 129, 232)
 noStroke();
-rect(width / 2, height / 2, 50, 50);
+rect(width/2, height/2, 50, 50);
 }
 
 function drawScene1() {
 fill(158, 54, 25)
 noStroke();
-ellipse(width / 2, height / 2, 50, 50, 80);
+ellipse(width/2, height/2, 50, 50, 80);
 }
