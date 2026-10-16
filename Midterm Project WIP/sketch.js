@@ -5,8 +5,8 @@ Instructions: Use your mouse cursor to move the UFO,
 avoid the astoriod moving towards your way.
 */
 function preload (){
-  ufoImage = loadImage ("UFO.png")
-  asteroidImage = loadImage("Asteroid.png")
+  ufoImage = loadImage ("Image/UFO.png")
+  asteroidImage = loadImage("Image/Asteroid.png")
 }
 function setup() {
   createCanvas(1920, 1000);
