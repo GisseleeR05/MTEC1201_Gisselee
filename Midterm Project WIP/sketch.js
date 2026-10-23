@@ -48,14 +48,15 @@ function draw() {
 
 //Start Screen
 if (gameStarted === false){
-  cursor();
-  fill("white");
-  textAlign(CENTER, CENTER);
-  textSize(90);
-  text("FLY THROUGH SPACE", width / 2, 350);
+cursor();
+fill("white");
+textAlign(CENTER, CENTER);
+textSize(90);
+text("FLY THROUGH SPACE", width / 2, 350);
 
-  textSize(35);
-  text("Watch out for the asteroids!", width / 2, 440);
+textSize(35);
+text("Watch out for the asteroids!", width / 2, 440);
+
 //Play Button
 if (mouseX > width / 2 - 150 &&
     mouseX < width /  2 + 150 &&
@@ -73,23 +74,24 @@ text("PLAY", width / 2, 630);
 else if (youDied === false) {
 noCursor(); 
 
-//Draw UFO and move Asteroids
+//Draw UFO and moving Asteroids
 image(ufoImage, ufoX, ufoY, 140, 100);
-  asteroidX = asteroidX - asteroidSpeed;
+//Moving Asteroids
+asteroidX = asteroidX - asteroidSpeed;
 
 //Draw Asteroid 1
 image(asteroidImage, asteroidX, asteroidY, 100, 100);
-//Crash between UFO & Asteroid
+/*If the UFO doesn't crash then Asteroid loops and
+increases in speed*/
 if (ufoX > asteroidX - 100 && 
   ufoX < asteroidX + 100 && 
   ufoY > asteroidY - 80 && 
   ufoY < asteroidY + 80){
   youDied = true;
 }
-//Loop
 if (asteroidX < -100) {
   asteroidX = 2000;
-  asteroidY = random(100, 980);
+  asteroidY = random(100, 960);
   asteroidSpeed = asteroidSpeed + 1;
 }
 
@@ -103,7 +105,6 @@ if (ufoX > asteroid2X - 100 &&
   ufoY < asteroid2Y + 80){
   youDied = true;
 }
-//Loop
 if (asteroid2X < -100) {
   asteroid2X = 2000;
   asteroid2Y = random(100, 980);
@@ -119,10 +120,9 @@ if (ufoX > asteroid3X - 100 &&
   ufoY < asteroid3Y + 80){
   youDied = true;
 }
-//Loop
 if (asteroid3X < -100) {
   asteroid3X = 2000;
-  asteroid3Y = random(100, 980);
+  asteroid3Y = random(100, 970);
   asteroid3Speed = asteroid3Speed + 1;
 }
 
@@ -131,14 +131,16 @@ time = (millis() - begin) / 1000;
 fill(255);
 textAlign(LEFT, TOP);
 textSize(35);
-text("survival time: " + floor(time) + "seconds", 30, 30);
-} else {
+text("survival time: " + floor(time) + " seconds", 30, 30);
+}
+
 //You Died screen
+else {
 cursor();
 fill(255, 100, 100);
 textAlign(CENTER, CENTER);
 textSize(80);
-text("YOU DIED", width / 2, height / 2);
+text("YOU DIED", width / 2, 400);
 
 fill(255);
 textSize(40);
@@ -162,12 +164,11 @@ text("PLAY AGAIN", width / 2, 630);
 }
 //Reset Entire Game
 function mousePressed(){
-//Start Screen
-if (gameStarted === false){
+
+if (gameStarted === false) {
   if (mouseX > width / 2 - 150 &&
     mouseX < width /  2 + 150 &&
-    mouseY > 580 &&
-    mouseY < 680){
+    mouseY > 580 && mouseY < 680){
   gameStarted = true;
   youDied = false;
 
@@ -175,13 +176,56 @@ if (gameStarted === false){
 ufoX = 960;
 ufoY = 540;
 
+//Resetting asteroids
+asteroidX = 1900;
+asteroidY = 540;
+
+asteroid2X = 2500;
+asteroid2Y = 840;
+
+asteroid3X = 3100;
+asteroid3Y = 700;
+
+//Resetting Speed
+asteroidSpeed = 6;
+asteroid2Speed = 7;
+asteroid3Speed = 8;
+
+//Resetting the time
+being = millis();
+time = 0;
 }
-  if (youDied === true){
-    asteroidX = 1900;
-    asteroidY = random(100, 980);
-    asteroidSpeed = 6;
-    youDied = false;
-    begin = millis();
+}
+//Resetting entirely after user crashes
+else if (youDied === true){
+if (mouseX > width / 2 - 150 &&
+    mouseX < width /  2 + 150 &&
+    mouseY > 580 && mouseY < 680){
+  gameStarted = true;
+  youDied = false;
+
+//Resetting UFO
+  ufoX = 960;
+  ufoY = 540;
+
+//Resetting Asteroids
+asteroidX = 1900;
+asteroidY = 540;
+
+asteroid2X = 2500;
+asteroid2Y = 840;
+
+asteroid3X = 3100;
+asteroid3Y = 700;
+
+//Resetting Speed
+asteroidSpeed = 6;
+asteroid2Speed = 7;
+asteroid3Speed = 8;
+
+//Resetting the time
+being = millis();
+time = 0;
   }
 }
 }
