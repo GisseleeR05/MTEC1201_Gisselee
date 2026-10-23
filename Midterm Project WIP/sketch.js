@@ -11,6 +11,7 @@ function preload (){
 function setup() {
   createCanvas(1920, 1000);
   imageMode(CENTER);
+  textFont("Serif");
 }
 
 //Variables
@@ -55,8 +56,9 @@ textAlign(CENTER, CENTER);
 textSize(90);
 text("FLY THROUGH SPACE", width / 2, 350);
 
+fill("red");
 textSize(35);
-text("Watch out for the asteroids!", width / 2, 440);
+text("Watch out for the asteroids!", width / 2, 480);
 
 //Play Button
 if (mouseX > width / 2 - 150 &&
@@ -97,7 +99,7 @@ if (ufoX > asteroidX - 100 &&
 }
 if (asteroidX < -100) {
   asteroidX = 2000;
-  asteroidY = random(100, 960);
+  asteroidY = random(50, 960);
   asteroidSpeed = asteroidSpeed + 1;
 }
 
@@ -113,7 +115,7 @@ if (ufoX > asteroid2X - 100 &&
 }
 if (asteroid2X < -100) {
   asteroid2X = 2000;
-  asteroid2Y = random(100, 980);
+  asteroid2Y = random(50, 980);
   asteroid2Speed = asteroid2Speed + 1;
 }
 //Draw Asteroid 3
@@ -128,16 +130,16 @@ if (ufoX > asteroid3X - 100 &&
 }
 if (asteroid3X < -100) {
   asteroid3X = 2000;
-  asteroid3Y = random(100, 970);
+  asteroid3Y = random(50, 970);
   asteroid3Speed = asteroid3Speed + 1;
 }
 
 //How long user survived
 time = (millis() - begin) / 1000;
-fill(255);
+fill("yellow");
 textAlign(LEFT, TOP);
 textSize(35);
-text("survival time: " + floor(time) + " seconds", 30, 30);
+text("Survival Time: " + floor(time) + " seconds", 30, 30);
 }
 
 //You Died screen
@@ -150,7 +152,7 @@ text("YOU DIED", width / 2, 400);
 
 fill(255);
 textSize(40);
-text("You lived for " + floor(time) + " seconds!", width / 2, height / 2, 300, 300);
+text("You lived for " + floor(time) + " seconds!", 960, 500);
 
 //Play again button
 if (mouseX > width / 2 - 150 &&
