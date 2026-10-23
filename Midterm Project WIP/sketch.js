@@ -38,6 +38,7 @@ let asteroid3Speed = 8;
 
 
 //Game
+let gameStarted = false;
 let youDied = false 
 let begin;
 let time = 0;
@@ -56,7 +57,7 @@ image(ufoImage, ufoX, ufoY, 140, 100);
 if (youDied === false) {
   asteroidX = asteroidX - asteroidSpeed;
 
-//Draw Asteroid
+//Draw Asteroid 1
 image(asteroidImage, asteroidX, asteroidY, 100, 100);
 //Crash between UFO & Asteroid
 if (ufoX > asteroidX - 100 && 
@@ -72,15 +73,48 @@ if (asteroidX < -100) {
   asteroidSpeed = asteroidSpeed + 1;
 }
 
+//Draw Asteroid 2
+asteroid2X = asteroid2X - asteroid2Speed
+image(asteroidImage, asteroid2X, asteroid2Y, 100, 100);
+//Crash between UFO & Asteroid
+if (ufoX > asteroid2X - 100 && 
+  ufoX < asteroid2X + 100 && 
+  ufoY > asteroid2Y - 80 && 
+  ufoY < asteroid2Y + 80){
+  youDied = true;
+}
+//Reset
+if (asteroid2X < -100) {
+  asteroid2X = 2000;
+  asteroid2Y = random(100, 980);
+  asteroid2Speed = asteroid2Speed + 1;
+}
+//Draw Asteroid 3
+asteroid3X = asteroid3X - asteroid3Speed
+image(asteroidImage, asteroid3X, asteroid3Y, 100, 100);
+//Crash between UFO & Asteroid
+if (ufoX > asteroid3X - 100 && 
+  ufoX < asteroid3X + 100 && 
+  ufoY > asteroid3Y - 80 && 
+  ufoY < asteroid3Y + 80){
+  youDied = true;
+}
+//Reset
+if (asteroid3X < -100) {
+  asteroid3X = 2000;
+  asteroid3Y = random(100, 980);
+  asteroid3Speed = asteroid3Speed + 1;
+}
+
 //How long user survived
 time = (millis() - begin) / 1000;
 fill(255);
 textAlign(LEFT, TOP);
 textSize(35);
 text("survival time: " + floor(time) + "seconds", 30, 30);
-} 
+} else {
 //You Died screen
-else {
+cursor();
 fill(255, 100, 100);
 textAlign(CENTER, CENTER);
 textSize(80);
