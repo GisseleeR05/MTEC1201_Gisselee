@@ -49,6 +49,7 @@ function draw() {
 //Start Screen
 if (gameStarted === false){
 cursor();
+
 fill("white");
 textAlign(CENTER, CENTER);
 textSize(90);
@@ -74,8 +75,13 @@ text("PLAY", width / 2, 630);
 else if (youDied === false) {
 noCursor(); 
 
-//Draw UFO and moving Asteroids
+//Move UFO with mouse
+ufoX = mouseX;
+ufoY = mouseY;
+
+//Draw UFO
 image(ufoImage, ufoX, ufoY, 140, 100);
+
 //Moving Asteroids
 asteroidX = asteroidX - asteroidSpeed;
 
@@ -192,7 +198,7 @@ asteroid2Speed = 7;
 asteroid3Speed = 8;
 
 //Resetting the time
-being = millis();
+begin = millis();
 time = 0;
 }
 }
@@ -224,7 +230,7 @@ asteroid2Speed = 7;
 asteroid3Speed = 8;
 
 //Resetting the time
-being = millis();
+begin = millis();
 time = 0;
   }
 }
