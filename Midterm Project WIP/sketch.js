@@ -11,7 +11,6 @@ function preload (){
 function setup() {
   createCanvas(1920, 1000);
   imageMode(CENTER);
-  begin = millis();
 }
 
 //Variables
@@ -22,10 +21,21 @@ let asteroidImage;
 let ufoX = 960;
 let ufoY = 540;
 
-//Asteroid
+//Asteroid 1
 let asteroidX = 1900;
 let asteroidY = 540;
 let asteroidSpeed = 6;
+
+//Asteroid 2
+let asteroid2X = 2500;
+let asteroid2Y = 840;
+let asteroid2Speed = 7;
+
+//Asteroid 3
+let asteroid3X = 3100;
+let asteroid3Y = 1140;
+let asteroid3Speed = 8;
+
 
 //Game
 let youDied = false 
@@ -42,8 +52,8 @@ ufoY = mouseY;
 //Draw UFO
 image(ufoImage, ufoX, ufoY, 140, 100);
 
-if (youDied === false) {
 //Moving Asteroid
+if (youDied === false) {
   asteroidX = asteroidX - asteroidSpeed;
 
 //Draw Asteroid
@@ -78,10 +88,10 @@ text("YOU DIED", width / 2, height / 2 - 60);
 
 fill(255);
 textSize(40);
-text("Yay you lived!" + floor(time) + "seconds", width / 2, height / 2 + 30);
+text("You lived for " + floor(time) + " seconds!", width / 2, height / 2 + 30);
 
 textSize(30);
-text("Click to play again", width / 2, height / 2 + 100);
+text("PLAY AGAIN", width / 2, height / 2 + 100);
 }
 }
 //Reset Entire Game
