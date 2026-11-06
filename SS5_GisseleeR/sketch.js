@@ -1,6 +1,3 @@
-/* how to create circles 
-show up in a swirl 14 small circles
-*/
 // Stores all circle positions and colors
 const canvasSize = 1000;
 
