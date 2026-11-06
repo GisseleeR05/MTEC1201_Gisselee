@@ -1,15 +1,8 @@
-/*const canvasSize = 50;
 
-function setup() {
-  createCanvas(900, 900);
-  strokeWeight(2);
-  fill(255);
-  background(12, 46, 61);
-}
-function draw() {
-  /*how to create circles 
- show up in a swirl 14 small circles*/
-  // Stores all circle positions and colors
+/* how to create circles 
+show up in a swirl 14 small circles
+*/
+// Stores all circle positions and colors
 const canvasSize = 1000;
 
 //variables
