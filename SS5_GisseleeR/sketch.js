@@ -1,3 +1,8 @@
+/* Gisselee Rivera
+Title: Swirl
+Instructions: Click and drag over the
+circle outlines to color in or erase.
+*/
 // Stores all circle positions and colors
 const canvasSize = 1000;
 
@@ -16,6 +21,7 @@ function setup() {
   angle = 0;
   distance = 5;
 //Makes the spiral shape with the circles
+
   for (let loops = 0; loops < 50; loops++) {
 
     let x = width / 2 + cos(angle) * distance;
@@ -63,7 +69,7 @@ background(165, 220, 90);
 //Color appears when dragging the mouse
   if (mouseIsPressed && mouseButton === LEFT){
     if(currentCircle !== -1 && currentCircle !== previousCircle){
-      circles[currentCircle].colored = !circles[currentCircle].colored;
+      circles[currentCircle].colored = true;
     }
   }
   previousCircle = currentCircle;
@@ -71,4 +77,20 @@ background(165, 220, 90);
 
   function mouseReleased() {
   previousCircle = 0;
+  for (let i = 0; i < circles.length; i++) {
+
+    let c = circles[i];
+
+  // Makes sure that mouse is on the circle outline 
+    let d = dist(mouseX, mouseY, c.x, c.y);
+
+    if (abs(d - circleSize / 2) < 8) {
+     currentCircle = i;
+   }
+   if (c.colored===false){
+    fill(c.color);
+  } else {
+    noFill();
+    }
+  }
 }
