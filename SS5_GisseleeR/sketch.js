@@ -4,7 +4,6 @@ const canvasSize = 1000;
 let circleSize = 50;
 let angle = 0;
 let distance = 0;
-
 let circles = [];
 let previousCircle = -1;
 
@@ -13,7 +12,7 @@ function setup() {
   colorMode(HSB, 255);
   noFill();
 
-  // Create the circles and remember their positions
+  // Makes the circle and their positions
   angle = 0;
   distance = 5;
 
@@ -39,12 +38,12 @@ background(165, 220, 90);
   
   let currentCircle = -1;
 
-// Draw all the circles
+// Drawing the circles
   for (let i = 0; i < circles.length; i++) {
 
     let c = circles[i];
 
-  // Check if the mouse is close to the circle's outline
+  // Makes sure that mouse is on the circle outline 
     let d = dist(mouseX, mouseY, c.x, c.y);
 
     if (abs(d - circleSize / 2) < 8) {
@@ -52,14 +51,15 @@ background(165, 220, 90);
    }
    if (c.colored){
     fill(c.color);
-   } else {
+  } else {
     noFill();
-   }
+    }
   //Draw the circle outline
   stroke(160 + i * 2, 180, 255);
   strokeWeight(2);
   circle(c.x, c.y, circleSize);
   }
+
 //Color appears when dragging the mouse
   if (mouseIsPressed && mouseButton === LEFT){
     if(currentCircle !== -1 && currentCircle !== previousCircle){
@@ -67,7 +67,8 @@ background(165, 220, 90);
     }
   }
   previousCircle = currentCircle;
-  }
+}
+
   function mouseReleased() {
   previousCircle = 0;
-  }
+}
