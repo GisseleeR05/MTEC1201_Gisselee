@@ -11,7 +11,7 @@ function setup() {
   colorMode(HSB, 255);
   noFill();
 
-function draw() {
+/*function draw() {
   background("white")
   smallerCanvas = canvasSize - 2;
   for (let loops = 0; loops < 30; loops++){
@@ -20,3 +20,4 @@ function draw() {
   }
 }
 }
+*/
