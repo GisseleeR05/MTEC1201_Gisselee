@@ -1,4 +1,3 @@
-
 /* how to create circles 
 show up in a swirl 14 small circles
 */
@@ -34,3 +33,27 @@ for (let loops = 0; loops < 35; loops++) {
   distance = distance + 4;
   }
 }
+
+function draw() {
+  background(165, 220, 90);
+
+// Draw circles
+for (let i = 0; i < circles.length; i++){
+  let c = circles[i];
+
+//Mouse Function
+  let d = dist(mouseX, mouseY, c.x, c.y);
+
+  if (abs(d - circleSize / 2) < 8){
+  //Left mouse clicked being held fills the circle with color
+    if (mouseIsPressed && mouseButton === LEFT){
+      c.colored = true;
+    }
+  //Right mouse clicked being held removes the color from the circle
+    if (mouseIsPressed && mouseButton === RIGHT){
+      c.colored = false;
+      }
+    }
+  }
+}
+
