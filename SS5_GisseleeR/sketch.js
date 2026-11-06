@@ -15,7 +15,7 @@ function setup() {
   // Makes the circle and their positions
   angle = 0;
   distance = 5;
-
+//Makes the spiral shape with the circles
   for (let loops = 0; loops < 50; loops++) {
 
     let x = width / 2 + cos(angle) * distance;
@@ -27,7 +27,7 @@ function setup() {
       colored: false,
       color: color(145 + loops * 2, 220, 255)
     });
-
+//Positions of the circles
     angle = angle + 0.35;
     distance = distance + 4;
   }
