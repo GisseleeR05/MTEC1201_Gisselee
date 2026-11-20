@@ -1,5 +1,5 @@
 //Variables
-let notes = ["You got this!", "Be kind to yourself", "Keep being you"];
+let notes = ["Words of Encouragement!", "You got this!", "Be kind to yourself", "Keep being you"];
 
 let notesIndex = 0;
 
@@ -13,7 +13,7 @@ function setup() {
   textSize(50);
   fill("white");
 
-//Color of the notepad
+//Colors of the notepad
   colors[0] = color("white");
   colors[1] = color(215, 196, 255);
   colors[2] = color(255, 245, 196);
@@ -24,24 +24,37 @@ function setup() {
 function draw() {
   background(255, 196, 241);
 
-  //Draw notepad 
+  //Draw the text
   
-  fill("white")
-  text("Here's a nice message: ", 80, 100);
+  fill("Black");
+  textFont("Serif");
+  textSize(50);
+  textAlign(CENTER);
+  text("A Message for You ", width / 2, 130);
 
+  //Draw the notepad
   fill(colors[colorIndex]);
   rect(50, 250, 700, 700);
+  circle(150, 350, 80)
+  circle(400, 350, 80)
+  circle(650, 350, 80)
+
+  fill(60);
+  textSize(50);
   
-  fill(colors[colorIndex]);
-  text(notes[notesIndex], 220, height / 2);  
+  text(notes[notesIndex], 400, 600);  
 
 }
-/*function mousePressed(){
+
+//Displays the next message
+function mousePressed(){
   notesIndex++;
   if(notesIndex >= notes.length){
     notesIndex = 0;
   }
-}*/
+}
+//Changes the notepad color and text message
 function keyPressed() {
  	colorIndex = (colorIndex + 1) % colors.length;
+  notesIndex = (notesIndex + 1) % notes.length;
 }
