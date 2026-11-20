@@ -30,14 +30,18 @@ function draw() {
   textFont("Serif");
   textSize(50);
   textAlign(CENTER);
-  text("A Message for You ", width / 2, 130);
+  text("A Message for You ", width / 2, 140);
+  textSize(25);
+  fill(255, 71, 238);
+  textAlign(CENTER);
+  text("press any key", width / 2, 180);
 
   //Draw the notepad
   fill(colors[colorIndex]);
   rect(50, 250, 700, 700);
-  circle(150, 350, 80)
-  circle(400, 350, 80)
-  circle(650, 350, 80)
+  circle(150, 350, 80);
+  circle(400, 350, 80);
+  circle(650, 350, 80);
 
   fill(60);
   textSize(50);
@@ -46,13 +50,6 @@ function draw() {
 
 }
 
-//Displays the next message
-function mousePressed(){
-  notesIndex++;
-  if(notesIndex >= notes.length){
-    notesIndex = 0;
-  }
-}
 //Changes the notepad color and text message
 function keyPressed() {
  	colorIndex = (colorIndex + 1) % colors.length;
